@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workshops on RM Ludwig</title>
+    <link>https://rxqx.github.io/tags/workshops/</link>
+    <description>Recent content in Workshops on RM Ludwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://rxqx.github.io/tags/workshops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Neurohackademy - The Tools We Used - Pt. 1</title>
+      <link>https://rxqx.github.io/post/neurohackademy-recap/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://rxqx.github.io/post/neurohackademy-recap/</guid>
+      <description>This year I was lucky enough to be one of the attendees of Neurohackademy, a two-week workshop focused on reproducible and shareable neuroscience. The first week of this workshop featured a dazzling array of speakers from a variety of research backgrounds, including psychology, computer science, and biomedical engineering, who led demonstrations on data science tools and methods. The second week was spent putting these tools to use in groups, hacking on different projects that were then shared with everyone on the last day of the workshop.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RM Ludwig</title>
+    <link>https://rxqx.github.io/</link>
+    <description>Recent content on RM Ludwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://rxqx.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://rxqx.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rxqx.github.io/about/</guid>
+      <description>RITA M. LUDWIG rludwig[at]uoregon[dot]edu rludwig.github.io  Education 2014-present Ph.D., Psychology, University of Oregon
+2014-2015 M.S., Psychology, University of Oregon
+2011-2012 M.A., Quantitative Methods in the Social Sciences, Columbia University
+2005-2009 B.A., Psychology and Sociology, New York University
+Publications Ludwig, R.M., Flournoy, J., &amp; Berkman, E.T. (2018). Inequality in personality and temporal discounting across socioeconomic status? Assessing the evidence. Under review.
+Ludwig, R.M., Srivastava, S., &amp; Berkman, E.T. (2018). Planfulness: A Process-Focused Construct of Individual Differences in Goal Achievement.</description>
+    </item>
+    
+    <item>
+      <title>Working in a SCRUM lab</title>
+      <link>https://rxqx.github.io/post/working-in-a-scrum-lab/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://rxqx.github.io/post/working-in-a-scrum-lab/</guid>
+      <description>The mutual influence of the fields of computer science and psychology is undeniable. Psychologists have adapted computer science theories to describe psychological phenomena, computer scientists have returned the compliment, and both fields are combining their strengths to work towards advancing understanding of important topics such as human brain function and treatment of psychological disorders. Each field is enriched by the other, a scientific symbiosis pushing the boundaries of human knowledge.</description>
+    </item>
+    
+    <item>
+      <title>Neurohackademy - The Tools We Used - Pt. 1</title>
+      <link>https://rxqx.github.io/post/neurohackademy-recap/</link>
+      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://rxqx.github.io/post/neurohackademy-recap/</guid>
+      <description>This year I was lucky enough to be one of the attendees of Neurohackademy, a two-week workshop focused on reproducible and shareable neuroscience. The first week of this workshop featured a dazzling array of speakers from a variety of research backgrounds, including psychology, computer science, and biomedical engineering, who led demonstrations on data science tools and methods. The second week was spent putting these tools to use in groups, hacking on different projects that were then shared with everyone on the last day of the workshop.</description>
+    </item>
+    
+    <item>
+      <title>Planfulness</title>
+      <link>https://rxqx.github.io/research/planfulness/planfulness/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://rxqx.github.io/research/planfulness/planfulness/</guid>
+      <description>The Planfulness Scale  The Planfulness Scale (Ludwig, Srivastava, &amp;amp; Berkman, 2018) is a 30-item measure that assesses the tendency for people to exhibit patterns of thoughts about goals that have been shown to encourage goal achievement in laboratory research. It weaves together previous work from achievement and personality psychology to provide an easily distributed metric of whether people tend to use evidence-backed goal-encouraging habits.
+The original aim of developing this scale was to inform intervention research.</description>
+    </item>
+    
+  </channel>
+</rss>

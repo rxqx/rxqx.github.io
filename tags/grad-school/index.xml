@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grad School on RM Ludwig</title>
+    <link>https://rxqx.github.io/tags/grad-school/</link>
+    <description>Recent content in Grad School on RM Ludwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://rxqx.github.io/tags/grad-school/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Working in a SCRUM lab</title>
+      <link>https://rxqx.github.io/post/working-in-a-scrum-lab/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://rxqx.github.io/post/working-in-a-scrum-lab/</guid>
+      <description>The mutual influence of the fields of computer science and psychology is undeniable. Psychologists have adapted computer science theories to describe psychological phenomena, computer scientists have returned the compliment, and both fields are combining their strengths to work towards advancing understanding of important topics such as human brain function and treatment of psychological disorders. Each field is enriched by the other, a scientific symbiosis pushing the boundaries of human knowledge.</description>
+    </item>
+    
+  </channel>
+</rss>

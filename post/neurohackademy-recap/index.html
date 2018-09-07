@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+
+	<title>Neurohackademy - The Tools We Used - Pt. 1</title>
+
+	<link rel="shortcut icon" href="https://rxqx.github.ioimages/tattoocrop.jpeg">
+
+	
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic|Quicksand:500">
+	
+	<link rel="stylesheet" href="https://rxqx.github.io/css/styles.css">
+
+	
+
+    
+        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=&product=inline-share-buttons"></script>
+    
+
+</head>
+<body class="home">
+
+<header id="header">
+	<div id="head">
+		<h1 id="logo" class="text-center">
+			<span class="title">Rita M. Ludwig, M.A., M.S.</span>
+		</h1>
+	</div>
+
+    <nav class="navbar navbar-default navbar-sticky">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                
+                <li>
+                    <a href="../../">home</a>
+                </li>
+                
+                <li>
+                    <a href="../../about/">cv</a>
+                </li>
+                
+                <li>
+                    <a href="../../research/">research</a>
+                </li>
+                
+                <li>
+                    <a href="../../post/">blog</a>
+                </li>
+                
+                <li>
+                    <a href="../../about/"></a>
+                </li>
+                
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+</header>
+</body>
+</html>
+
+
+<main id="main">
+
+	<div class="container">
+
+		<div class="row topspace">
+			<div class="col-sm-14">
+
+ 				<article class="post">
+ 				  <h2 class="section-title">Neurohackademy - The Tools We Used - Pt. 1</a></h2>
+					<div class="entry-content">
+						<p style="text-align:center;"><img src="NuerHack logo white@2x.png" alt="Neurohackademy"></p>
+
+<p>This year I was lucky enough to be one of the attendees of <a href="https://neurohackademy.org/" target="_blank">Neurohackademy</a>, a two-week workshop focused on reproducible and shareable neuroscience. The first week of this workshop featured a dazzling array of speakers from a variety of research backgrounds, including psychology, computer science, and biomedical engineering, who led demonstrations on data science tools and methods. The second week was spent putting these tools to use in groups, hacking on different projects that were then shared with everyone on the last day of the workshop. Overall it was an experience that was both intellectually and personally fulfilling, and I strongly recommend the program to other students interested in open and accessible neuroscience.</p>
+
+<p>When I got back there was some curiosity about the program. Besides questions about the experience, the number one thing that was asked was &ldquo;Do you need to be a programmer to attend?&rdquo;. While the answer is &ldquo;no,&rdquo; I did find myself struggling with imposter syndrome when trying to use a tool for the first time that most of everyone else seemed to be fluent with (🐍). Luckily, everyone at the workshop- both instructors and attendees- were patient, kind, and willing to sit down to walk through the very basics of how to get started. Unfortunately, we all can&rsquo;t be at Neurohackademy all of the time, and if you&rsquo;re like me, you might find the very first steps of using a new tool to be the hardest- and the documentation to be the most obtuse. So I wanted to write a post that works through the first baby steps to getting started with the tools that we used during the workshop. In this post I will start with the different programming languages we used (bash, R, Python), and in Pt. 2 I will dive in to getting started with the different systems and tools(Docker, Jupyter notebooks, Git hub).</p>
+
+<p>If you are interested in the overall experience of Neuorhackademy, I recommend reading the thoughts shared by several of the attendees and instructors: <a href="https://www.armcintosh.com/blog/blog16" target="null">Amanda Easson</a>, <a href="https://kristianeschenburg.github.io/2018/08/neurohackademy-open-science" target="null">Kristian Eschenburg</a>, <a href="https://escience.washington.edu/neurohackademy-debuts-successfully/" target="null">Ariel Rokem (organizer/instructor)</a>, <a href="http://www.talyarkoni.org/blog/2018/08/16/neurohackademy-2018-a-wrap-up/" target="null">Tal Yarkoni (organizer/instructor)</a>.</p>
+
+<p><h4><center>Jump to First Steps Tutorials</center></h4>
+<center><a href="#bash"><img src="bash.png" alt="Bash"></a><a href="#R"><img src="R_logo.svg.png" alt="R"></a><a href="#python"><img src="python.png" alt="Python"></a></center>
+<div class="panel panel-cta">
+        <div class="panel-body">
+                <h4><center>A Disclaimer</center></h4><center><p>I am neither a computer scientist nor a programmer. These tutorials are not meant as comprehensive lessons, but rather quick-start guides that will help you get up and running toward reaching your own coding goals. If you are familiar with these languages and think that I missed something important, send me an email and I will add your comments here with credit.</p></center>
+            </div>
+</div>
+<h2 class="section-title"><span>Advice About Coding</span></h2>
+<p>It can be intimidating to see other people who are &lsquo;good&rsquo; at coding. At Neurohackademy it was hard to resist dissolving into a quivering ball of self-consciousness watching my friends <a href="https://github.com/miykael/parcellation_fragmenter" target="_blank"> program a brain parcellation fragmenter that spits out beautiful rainbow brains</a> in python while I struggled to successfully print &ldquo;Hello world&rdquo; to the console. But keep in mind that the term &lsquo;programming language&rsquo; is extremely apt- just as you wouldn&rsquo;t be expected to be fluent in German after a vacation in Berlin, your first foray into R or C++ will be a bit of an uphill climb as you try to learn complex declension rules and battle with errors over when to use &lsquo;du&rsquo; or &lsquo;Sie&rsquo;. And while taking a class can help you learn the basic grammatical rules quicker, there is nothing like fully immersing yourself in an environment to become fully fluent in a language. There is a beautiful truth to coding- you can definitely do it, with practice and patience. But if you really want to make things stick, nothing beats working on a project of your own.</p>
+
+<blockquote style="text-align:center;background-color:black;color:white;font-family:serif;font-size:175%;"><i>"There is a beautiful truth to coding- you can definitely do it, with practice & patience."</i></blockquote>
+
+<p>That being said, here is my advice for those getting started with coding, or learning a new programming language:
+<ul style="list-style-type:circle">
+  <li><h5>Learn a language because it has utility for you.</h5> Coding is a time sink. And just like spoken language, it is easy to lose the fundamentals if you don&rsquo;t practice using it often. Invest your time wisely into learning a programming language that you will use for your own research and/or that is used commonly in your desired career.</li>
+  <li><h5>Use the internet.</h5> The communities for popular languages are massive, and massively online. <a href="https://stackoverflow.com/" target="blank">Stack Overflow</a>, <a href="https://stats.stackexchange.com/" target="blank"> Cross Validated</a>, and <a href="https://www.python.org/community/forums/" target="blank"> the Python forums</a> are just three popular examples of online resources to help you get started or get unstuck. Whenever you have a task or error code you can&rsquo;t figure out, fire up your favorite search engine and see if the internet has already solved your problem.</li>
+  <li><h5>Remember- even the pros&rsquo; code breaks.</h5> One of my favorite things about Neurohackademy was how honest and nonchalant the instructors were when their code broke, or when they couldn&rsquo;t figure something out. It was refreshing! Broken code doesn&rsquo;t mean you&rsquo;re not a &lsquo;real&rsquo; programmer, and asking for help isn&rsquo;t something to be embarassed of. Shit happens and shit breaks, no matter how long you&rsquo;ve been coding.</li>
+  <li><h5>Check your paths.</h5> The #1 source of broken code in every language that I&rsquo;ve used is a path not being specified correctly (unfamiliar with this term? Jump down to the <a href="#bash">Bash tutorial</a>). Do yourself a favor and form a habit of double-checking paths as the last thing you do before you run your code, and the first thing you do when debugging.</li></ul></p>
+
+<p>I hope these points help as you work through the first steps tutorials below, and throughout your adventures in coding. The ideal is coding as a fun, creative experience rather than an exercise in frustration.</p>
+
+<p>With that unsolicited advice out of the way, let&rsquo;s move on to learning the basic first steps of working with the different programming languages that we used at Neurohackweek. I&rsquo;d recommend that anyone interested in a career in psychology, neuroscience, or data science gain experience with these three commonly used languages.</p>
+
+<p></p>
+<h3><a name="bash">Bash</a></h3>
+<p>Let&rsquo;s get this out of the way first- whether bash is technically a programming language is a debate similar to if tomatos are fruits and if Pluto is a planet; i.e., technical arguments for specialists in those fields who are upset over the layperson usage. As a psychologist and not a computer scientist, I&rsquo;m going to refer to it as a programming language for simplicity&rsquo;s sake as you write in its idiosyncratic language to tell your computer to do something.</p>
+
+<p>That being said, what <i>is</i> bash? Bash stands for <i>Bourne-again shell</i>, and while the first two letters represent a funny inside joke, the latter two- standing for &lsquo;shell&rsquo;- tell you exactly what it is. Computers that run on Unix operating systems can open up <i>shells</i>, or command-line interpreter interfaces, to directly access the guts of the operating system. All bash is is a specific type of Unix shell that runs on your system and allows you to type commands that tells the system directly what you want it to do. You can tell you computer what to do using a shell either by typing directly on the interface&rsquo;s <i>command line</i>, or by writing and running a <i>shell script</i>- a bunch of code commands that you save as a .sh (shell) file.</p>
+
+<p>Apple computers come out-of-the-box with an application called <i>Terminal</i>, which is a bash shell. I think Windows 10 released a bash shell for use as well, but being as how I haven&rsquo;t touched a Windows machine since 2010, this first steps tutorial will be MacOS-oriented.</p>
+
+<p>Finally, as a psychologist I typically use bash for three reasons: creating and navigating file structures; writing and running scripts that make my life easier; and accessing command-line programs, like python or docker. The first section of this bash tutorial will help you be able to perform the first activity and the following section will help get you ready for the second, while the third activity is addressed in the first steps tutorial on python.</p></p>
+
+<p><h4> Step One: Opening a bash shell &amp; navigating around</h4>
+<p> To get coding in bash, the first baby step is of course to open a bash shell. On a Mac, how would you open a bash shell? Hover over the spoiler for the answer.
+<span class="spoiler2"> Open the &lsquo;Terminal&rsquo; application. </span>
+<br><br>
+Once you have successfully opened a bash shell, it will look something like this:</p>
+<p style="text-align:center;"><img src="newbash.png" alt="An open bash shell"></p>
+<p> This is your window into the guts of your computer&rsquo;s operating system, much like those <a href="https://en.wikipedia.org/wiki/Cannulated_cow">portholes that scientists put into the sides of cows to study their digestion</a>. The area where you see a blinking cursor- probably after YourUserName$- is your command line. Here is where you will type the things you want your computer to do, and bash will interpret these commands and submit them to the operating system.</p>
+
+<p>Now it is time to learn one of the most important lessons of coding- how to navigate a file system. Even if you have never used a shell before, you already know how to navigate a file system using the graphical interface of the MacOS! The Finder application is just a file navigation system that allows you to interact with your computer&rsquo;s files by clicking and dragging pretty pictures of folders, rather then typing directions on a command line. So when we are in the bash shell, try to keep in mind that all we are doing is navigating through Finder using the keyboard rather than the mouse.</p>
+
+<p>Let&rsquo;s start with a basic, important command. Type <code>pwd</code> on your command line in your bash shell. This stands for <i>print working directory</i>, and tells you the full <i>path name</i> of the folder where you currently are submitting commands from in your computer&rsquo;s file directory. When I type this command in my terminal, I see <code>/Users/rx</code>. Since I&rsquo;m not using a graphical interface like Finder, however, this doesn&rsquo;t help me see what files currently exist in the <code>/Users/rx</code> folder. To do so, type <code>ls</code>, which stands for <i>list</i>.</p>
+<p style="text-align:center;"><img src="lsexample.png" alt="A list of files"></p>
+<p> Here are a list of the folders and files in my system that &ldquo;live&rdquo; in the <code>/Users/rx</code> folder. You might have noticed that some of the words are printed in different colors; I&rsquo;ve set my custom colors so that folders are printed in teal and files are printed in white. This distinction between the two is important because we can <i>change our working directory</i> into different folders.
+<br><br>
+Let&rsquo;s try changing directory to a familiar place; the desktop. Type <code>cd Des</code>, then press the tab key. Did the command line auto-complete the word &lsquo;Desktop&rsquo; for you?  This is a neat trick that will save you a lot of typo-induced heartache; bash can complete the names of folders, files, and paths that it recongizes in the file system. Now try listing the files in this folder. </p>
+<hr>
+<h5>A brief aside</h5>
+<p>What happens if there are two folders in my current working directory that begin with the same letters? If I press tab once, nothing will happen (except an upset computer noise). But if I press tab twice, the following is printed:</p><p style="text-align:center;"><img src="tabcomplete.png"></p>
+<p>Bash helpfully prints out all of the matching options so that I can narrow down my command to the intended folder path. The double tab can be used to list the contents of any folder path from the command line in case you forget where you are in your directory structure.</p>
+<hr>
+<p>Certain characters have special navigational meanings in bash. <code>.</code> means <i>here</i>, and <code>..</code> means <i>the folder containing the one that you are presently in</i>. So, for example, if I wanted to change directory back from my <code>Desktop</code> into my <code>/Users/rx/</code> folder I could type <code>cd ..</code> instead of the much longer <code>cd /Users/rx/</code>. But maybe I just want to check what files are in the <code>/Users/rx/</code> folder without actually changing my present directory there. What would I type to achieve this? <span class="spoiler2"> ls ..</span> .</p>
+
+<p>Finally, specific bash commands can be augmented through the use of <i>flags</i>. Flags follow the command being <i>called</i>, or written on the command line, and come in the format of <code>-letter</code>, where the letter stands for the particular command augmentation. Let&rsquo;s clear this up. Before when I wanted to list all of the files in my <code>/Users/rx</code> folder, I called the <code>ls</code> command while that was my working directory. It printed out a list of all the visible files in that folder to the console, as expected. But I can make <code>ls</code> display other things depending on the flags that I specify. For example, the <code>-l</code> flag says that I want the ouptut in <i>long</i> format, which means that additional information, like file access permissions, will be printed. So, the command for this now looks like <code>ls -l</code>.</p>
+<p style="text-align:center;"><img src="listlong.png" alt="A long printed list."></p>
+<p>If I was sorting through all of my manuscript_definitely_final.doc files manually and I completely forgot which one was <i>actually</i> the most recent, and therefore most correct, version, I could use the <code>-t</code> flag, which sorts the printed files by <i>modification time</i>. But unfortunately when I do that, the files are listed without any information about when I actually had edited them. Thankfully, we can combine flags on the command line, and so by <i>passing</i>, or submitting, the command <code>ls -tl</code>, I get the following output that both lists the files by modification date and time <b>and</b> tells me what that date and time was:</p>
+<p style="text-align:center;"><img src="longdatelist.png" alt="A long printed list."></p>
+<hr>
+<p>These basic commands are the building blocks of using bash, and are necessary to learn in order to use a language like python or a service like git. I recommend taking the <a href="https://www.codecademy.com/learn/learn-the-command-line" target="null">Code Academy course on learning the command line</a> to further your understanding of bash and command line functions.</p>
+<h4> Step Two: Installing and using a text editor</h4>
+<p> When I first learned about bash it wasn&rsquo;t brought up how important picking a text editor is to maintaining your sanity while coding. Whether you want to read, write, or run scripts, in bash or python, on your local machine or a high performance computing cluster, you will want to pick the best tool to help you. For a while I stubbornly only used <i>nano</i>, a text editor that comes prepackaged within the Terminal application (I feel like I must emphasize again that I am <b>not</b> a computer scientist). Nano can get simple jobs done just fine, without needing to load and launch an exernal program. Let&rsquo;s walk through what it does.</p>
+
+<p>I have a list of subjects in a file called <code>subject_list.txt</code>. To read this text file inside nano, simply type <code>nano subject_list.txt</code>. This is what it looks like inside the text editor:</p>
+<p style="text-align:center;"><img src="nano.png" alt="Nano text editor."></p>
+<p> Very no-frills. The text is all the same color and the interface is very simple, but it is good for managing basic tasks, like adding in another participant to the list by hand or fixing a typo quickly in a script. Once you are finished working with the text file press (on a Mac) <code>control + x</code> to close nano, and it will ask you if you want to save changes and/or save the file under a different name.</p>
+
+<p>Nano is great for simple, quick tasks, but if you are writing a script something with more functionality is better to use. I use <a href="https://atom.io/" target="null">Atom</a>. To use a text editor that is not already available in your bash shell, you first need to download the editor, then make it available for bash to actually run. So, the first step is to follow the instructions on the Atom website to download the correct version for your operating system.</p>
+<div class="panel panel-cta">
+        <div class="panel-body">
+                <h4><center>WARNING</center></h4><center><p>There is a bug with recent (High Sierra) versions of the macOS when downloading Atom. When the download wizard prompts you to click+drag the Atom application into your applications folder in a separate pop-up window, <i>that process does not work correctly</i>. Make sure you use Finder to select the Atom folder from Downloads and move it into Applications. See <a href="https://discuss.atom.io/t/unable-to-open-atom-from-the-command-line-without-executing-install-shell-commands-each-time-i-open-oh-my-zsh/36302" target="null">this post on the Atom discussion forums</a> for discussion of the error. </p></center>
+            </div>
+</div></p>
+
+<p> Once you have downloaded Atom, launch the Application. From there, on the top navigation bar, under 'Atom', select 'install shell commands'. This will allow you to call Atom from inside your bash shell.</p>
+<p style="text-align:center;"><img src="atom.png" alt="Atom."></p>
+<p>Now from the command line I can pass `atom subject_list.tx` to open that text file in Atom.
+
+But again, I will primarily use nano for little, quick tasks, and Atom for scripting. Below I have posted a script that I wrote to segment brain areas and create masks from those segmentations, both in nano and Atom.</p>
+<p style="text-align:center;"><img src="asegnano.png" alt="Nano text editor."><img src="asegatom.png" alt="Atom text editor."></p>
+<p> The difference is visible- Atom color-codes different parts of a script to ease reading and add another level of double-checking for code. For example, if I am trying to establish a new variable and do not see that that part of my script is printed in red, I know that I have typo'ed something somewhere. But it isn't just the color-coding that makes using an external text editing program preferential- there's additional functionality, like error checking, the ability to select and edit multiple lines simultaneously, and the possibility to add in even <b>more</b> functionality through their <a href="https://atom.io/packages" target="null"> suite of packages</a>. There are other text editing programs out there (another popular option is <a href="https://www.sublimetext.com/" target="null">Sublime Text</a>), so you should find and use whichever works bests for you and your coding style.</p>
+
+<p><h4> Next Steps: Learning more bash commands &amp; Editing your bash profile</h4>
+<p>The <a href="https://www.codecademy.com/learn/learn-the-command-line" target="null">Code Academy course on learning the command line</a> is a great resource for furthering your understanding of bash and its basic commands.</p>
+
+<p>You can personalize your bash experience, like I have done with my modified cursor icon and color scheme, by editing your <i>bash profile</i>. <a href="https://natelandau.com/my-mac-osx-bash_profile/" target="null">This blog post</a> reviews the basics of what a bash profile is, and provides an example bash profile with a variety of different modifications that you can copy for your own use (including editing basic bash commands and setting key shortcuts). Certain text editors may require you to edit your bash profile to be able to use that editor from bash. It can be fun to play around with and customize, but the important thing is to know that the bash profile exists- especially since it is a <i>hidden file</i>, which means that it won&rsquo;t show up with the <code>ls</code> command (but will with <code>ls -a</code>!).</p>
+<blockquote style="text-align:center;background-color:#3413d8;color:white;font-family:serif;font-size:175%;">TL;DR</blockquote>
+<p>Bash commands are the basic building blocks for many processes in data science. Being able to comfortably open a bash shell, navigate a file system, and specify a path are good first steps to understanding this language. If you plan on using the command line and writing scripts regularly in your work, you should download a text editing program. <a href="https://atom.io/" target="null">Atom</a> and <a href="https://www.sublimetext.com/" target="null">Sublime Text</a> are two popular options. You can further your experience with bash by customizing your <a href="https://natelandau.com/my-mac-osx-bash_profile/" target="null">bash profile</a> and taking the <a href="https://www.codecademy.com/learn/learn-the-command-line" target="null">Code Academy course on learning the command line.</a> </p>
+<hr>
+<hr>
+<h3><a name="R">R</a></h3>
+<p>According to the <a href="https://www.r-project.org/about.html" target="null">R website</a>, &ldquo;R is a language and environment for statistical computing and graphics&rdquo;. It has increased in popularity within the field of psychology in recent years as a free, open-source, fully modular alternative to the costly and obtuse SPSS statistical programming package primarily used in the field for many years. One of the major benefits to R is the vast online community that works with it, develops packages for it, and writes documentation and tips. Other benefits include a multitude of tools for (very fancy) data visualization and a variety of packages developed to reduce the learning curve to using this language. I recommend learning R for those who primarily work with behavioral data, although recently there have been R packages written for neuroimaging analysis, such as <a href="http://ibic.github.io/neuropointillist/" target="null">Neuropointillist</a>. Speaking of Neuropointillist, fellow Neurohackers <a href="https://github.com/rosali920/neuropointillist" target="null"> wrote companion code for the package</a> as well as detailed tutorials on its use- check it out if you want to work with neuroimaging data in R!</p></p>
+
+<p><h4> Step One: Downloading R and R Studio</h4>
+<p>Go to the <a href="https://cran.r-project.org/mirrors.html" target="null">Comprehensive R Archive Network (CRAN)</a> to download R from a mirror hosted close to your location. Once R is successfully downloaded and installed, the next step is to install the free, open-source version of <a href="https://www.rstudio.com/products/rstudio/download/" target="null">R Studio</a>. R Studio is an <i>integrated development environment</i> (IDE) for R- basically, a software program that allows you to edit and debug source code in one nice-looking visual package. While you can of course choose to work in the base R program, R Studio adds visual appeal and functionality that make coding and debugging in it much easier.</p>
+
+<p>Once you download and install R Studio, you can launch it to see what the <i>graphical user interface</i> (GUI) looks like. You will see four windows:</p>
+<ul style="list-style-type:circle">
+<li><u>The Console</u> is the command line. Type <code>getwd()</code> in the console and pass the command to print the current working directory (analagous to <code>pwd</code> in bash).</li>
+<li><u>The Script Editor</u> is where scripts can be loaded, written, and saved. There are a variety of different types of scripts that can be written in R Studio, including Shiny applications (interactive web applications), R markdown files (which can spit out fully reproducible .pdf or .html files), and blogdown projects (which I am using right now to create this post- meta!). </li>
+<li><u>The Environment Pane</u> has tabs for the global environment and history of commands passed in your <i>R workspace</i>. The enviroment tab lists all of the variables in your workspace. Type <code>a &lt;- 3+2</code> in the console. You will see the variable a and its value appear under in the environment tab. The history tab is a log of all the commands that you have entered in a working session; this should display both <code>a &lt;- 3+2</code> and <code>getwd()</code> if you practiced passing those commands to the console.</i>
+<li><u>The Display Pane</u> contains miscellaneous tabs displaying information about your workspace, as well as a viewer where drawn objects (like charts or figures) appear. The files tab is the graphical depiction of where you currently are in a file structure. The packages tab lists all of the R add-on packages that you have installed. And the help tab will populate with documentation from CRAN. </li></ul>
+<h4> Step Two: Navigating a file system &amp; Function arguments</h4>
+<p>Now you should try to navigate around in a file system, just like we practiced in bash. The commands in R are different, and also take on a slightly different format. Specifically, while R commands also are in the format of calling a <i>function</i> on an <i>object</i>, whenever there is a command that you want to execute, you will first type the name of the command followed by the object in parentheses (whereas in bash the object was just typed immediately after the command). We can try this by navigating to the folder above our Desktop folder, like we did in bash. <code>setwd</code> is the R command for changing our current working directory. What is the rest of the command? <span class="spoiler2"> setwd(&lsquo;/Users/rx/&rsquo;) </span>. Now, use the <code>getwd()</code> command to print your current path. I see <code>[1] &quot;/Users/rx&quot;</code> printed, which means that I successfully set my working directory to the correct folder.</p>
+<hr>
+<h5>Getting errors?</h5>
+<p>You may be running into an error if the command is not properly formatted- something like <code>Error: unexpected ')' in &quot;setwd(Desktop/)&quot;</code>. This is because the path name is considered a <i>string</i>, or an arrangement of alphanumeric characters meant to be interpreted by the computer as a sole unit. To fix this error, use single <code>''</code> or double <code>&quot;&quot;</code> quotes around the path name to indicate that it is a string. Note that this also works using the special characters that we learned in bash for &lsquo;here&rsquo; <code>.</code> and &lsquo;the folder containing this one&rsquo; <code>..</code>. So, if from the <code>Desktop/</code> folder you type the command <code>setwd('..')</code>, you will change directory into the folder containing the Desktop.</p>
+<hr>
+<p>You can also modify the execution of commands in R, similar to how using flags modifies bash commands. These modifications will get placed <b>inside</b> of the parentheses with the object. To practice this, change directory back to your Desktop folder. As we did before in bash, we will list the contents of this folder using a function called <code>list.files()</code>. You will see the files located in your Desktop printed to the console, as expected. But we can modify this command to spit out additional information, and one of the benefits of using R Studio is that we can read all of the different possible <i>arguments</i> that could modify this function within R Studio itself. Type <code>?list.files</code>; the <code>?</code> character before the function name tells R Studio to display the CRAN documentation for that function in the Help tab.
+</p>
+<p style="text-align:center;"><img src="listfiles.png" alt="list.files documentation"></p>
+<p> The <b>Usage</b> section displays how the function and arguments should be formatted, as well as the default options that are run when you do not add any arguments to the function. Here, you can see why we can type <code>getwd()</code> with empty parathenses and produce the correct output- because the default path name input in the function is <code>path = &quot;.&quot;</code>, or &lsquo;here&rsquo;.</p>
+
+<p>The <b>Arguments</b> section describes the different arguments that you can include in the command. Here we can see that the argument <code>full.names</code>, which is by default set to <code>FALSE</code>, is an argument that determines whether or not the full path of a file is displayed instead of the file&rsquo;s name. Try setting that argument to <code>TRUE</code> and running the command (command is under the spoiler) <span class="spoiler2"> list.files(full.names=TRUE)</span>. You should see output that looks different than when you pass that command without including that argument. As a final practice, try to list the files in a different directory on your computer without changing your current working directory to that location. Remember, follow the format for arguments specified in the Usage section and put quotes around strings. My command for listing the files in my Documents folder is under the spoiler: <span class="spoiler2"> list.files(path=&lsquo;/Users/rx/Documents&rsquo;)</span></p>
+
+<p><h4> Step Three: Installing and loading packages</h4>
+<p>As mentioned before, the real power of R is all of the various <i>packages</i>, or compiled collections of code and functions, that others have developed. Installing packages is fast and easy and done via the command line. Let&rsquo;s practice using a package of interactive introductory lessons for R, called <a href="https://swirlstats.com/" target="null">Swirl</a>.</p>
+
+<p>The first thing that we need to do is download the package from CRAN. Type <code>install.packages(&quot;swirl&quot;)</code>. R will then fetch and install the Swirl package.</p> <p style="text-align:center;"><img src="swirlinstall.png" alt="Nano text editor."></p>
+<p>We aren&rsquo;t done quite yet. While we have installed the files necessary to use Swirl, we still haven&rsquo;t loaded it in our working environment- this means that we still can&rsquo;t pass Swirl commands from the console.</p></p>
+
+<hr>
+
+<p><h5>A brief aside</h5>
+<p>Try passing <code>?swirl</code> to the console. R should have printed &ldquo;<b>No documentation for ‘swirl’ in specified packages and libraries: you could try ‘??swirl’</b>&rdquo;. Because we have not loaded Swirl yet, R cannot search its commands to display the help information. But another benefit of R is that we can still search <b>any command from any package that we have installed</b> by typing <code>??</code> before the command name. If you type <code>??swirl</code> the help page will refresh and show you a list of possible matching commands across all of your installed packages. This is a very useful function because as a regular R user you will probably install a very large amount of packages, and by searching in this way you can pinpoint exactly which package you would like to load to your current working environment.</p>
+<hr>
+<hr>
+<p>To actually <i>use</i> the Swirl package, we have to load it. Type <code>library(swirl)</code> to get started with this package. Swirl will print a welcome message once it is successfully loaded, and you should see the Swirl package underneath your Packages tab on the Display Pane. If you see this message, congratulations! You have started on the highly addictive path of installing R packages and will soon have a veritable dragon&rsquo;s hoard of packages in your library to play with. You only need to install a package once, but package libraries need to be loaded for every R session (or R script) that you would like to use them in.</p>
+
+<p>If you will be using R for data science, here are a handful of popular packages to get you started (and remember, you can install them all using the <code>install.packages()</code> command right in R studio):<ul style="list-style-type:circle"> <li><a href="https://www.tidyverse.org/" target="null">tidyverse</a>, for manipulating data sets with ease</i>
+<li><a href="https://ggplot2.tidyverse.org/" target="null">ggplot2</a>, for beautiful data visualization and enhanced customization of display options</li>
+<li><a href="https://github.com/tidyverse/purrr" target="null">purr</a>, for enhaced functional programming</li>
+<li><a href="https://cran.r-project.org/web/packages/psych/psych.pdf" target="null">psych</a>, for a range of analyses commonly used in psychology</li></ul>
+</p>
+<h4> Next Steps: Learn to code in R</h4>
+<p>If you have downloaded the Swirl package and loaded its library to your working environment, you can call <code>swirl()</code> to take a series of interactive lessons on popular basic topics in R. Everything from learning basic commands, to running regressions, to producing and customizing plots. I highly recommend Swirl to learn how to code in R within the natural environment of R Studio. Before you get started you can <a href="https://github.com/swirldev/swirl_courses#swirl-courses" target="null">read about the different Swirl course offerings</a> to find one that interests you, then install that course module in the <code>swirl()</code> menu options when you are ready.</p>
+
+<p>Another great resource is the free online textbook, <a href="http://r4ds.had.co.nz/" target="null">R for Data Science</a>. This text is informative for both novice and advanced users of R looking to work with complex data types. As one of the co-authors is the author of the tidyverse series of packages, this text also discusses how to use tidy commands to manipulate data in a more friendly way than base R permits.</p>
+<blockquote style="text-align:center;background-color:#3413d8;color:white;font-family:serif;font-size:175%;">TL;DR</blockquote>
+<p>R is a free, open-source, widely-used language and a great option to use for data science. Some of the many benefits of R include the ease of installing packages hosted on the <i>Comprehensive R Archive Network</i> (CRAN), the variety of packages available for download, and the comprehensive, well-written package documentation. Downloading the <i>interactive development environment</i> (IDE) <a href="https://www.rstudio.com/products/rstudio/download/" target="null">R Studio</a> is strongly recommended. Recommended resources for learning coding in R are the tutorials in the <a href="https://swirlstats.com/" target="null">Swirl package</a> and the <a href="http://r4ds.had.co.nz/" target="null">R for Data Science</a> online textbook.</p>
+<hr>
+<hr>
+<h3><a name="python">Python</a></h3>
+<p>Ah, Python. The language preferred by Serious Computer People across a diverse rainbow of fields. The language that my ignorance of cost me an internship that I really, <b>really</b> wanted. The language that I wish I had been taught during undergrad rather than SPSS or about mountains of unreplicable social psychology effects. I say with a wistful sigh that if I could go back and change my educational trajectory, I would have started with learning Python. With that being said, let&rsquo;s get <b>you</b> started on your on education in this prevalent, versatile language.</p></p>
+
+<p><h4> Step One: Installing Anaconda &amp; Launching Python</h4>
+<p>It is possible that you may already have python installed on your machine. Open a bash shell and type <code>which python</code>. If python is installed somewhere on your machine, the path where it is installed will be printed. If python is installed, type <code>python --version</code> to check which version you have. You could then launch python from the command line by typing <code>python</code>, and if you see the <code>&gt;&gt;&gt;</code> appear before your cursor, you have successfully launched python and can begin coding in it.</p>
+
+<p>But let&rsquo;s do something slightly more complicated now to make things a lot less complicated later on. That complicated thing is installing Anaconda, a data science platform and package management system. Follow the instructions on the <a href="https://www.anaconda.com/download/#macos" target="null"> Anaconda site</a> to download the program for your particular OS (and you can check out the <a href="https://docs.anaconda.com/" target="null">Anaconda documentation</a> for more info). <b><u>WARNING: Download either the version for Python 3.6 OR the version for Python 2.7, but NOT BOTH.</u></b> I recommend that you download the 3.6 version, as it is more up-to-date (and Anaconda will download a version of Python to match your choice). Unless you know better, you can accept the defaults in the installation wizard and proceed with the install, then launch the Anaconda Navigator and click on the &lsquo;Environments&rsquo; tab.</p>
+<p style="text-align:center;"><img src="anacondanav.png" alt="Anaconda navigator."></p>
+<p> The above is similar to what you will see under your &lsquo;Environments&rsquo; tab, the only difference being that I have already created new environments to work in. This tab is one of the reasons why Anaconda makes your life less complicated later on; as you continue to write and run code, you may often run into version issues- your labmate&rsquo;s analysis script was written in Python 2.7 but your favorite new data vis package requires 3.6 to run, for example. The Anaconda Navigator allows us to create self-contained environments with different versions of Python to work with by clicking on the &lsquo;Create&rsquo; button at the bottom.</p>
+<p style="text-align:center;"><img src="createenv.png" alt="Create an environment in Anaconda."></p>
+<p>With different environments created, accessing different versions of Python is as simple as launching a new Terminal window from within Anaconda Navigator.</p>
+<p style="text-align:center;"><img src="terminalenv.png" alt="Launching a Terminal window in Anaconda."></p>
+<p>I currently have one environment creatively named &lsquo;oldpy&rsquo;, where Python 2.7 is installed. Here, I am opening a Terminal in that environment and one in my current user (<code>rx</code>) directory to show the difference in the Python version installed.</p>
+<p style="text-align:center;"><img src="pythonversions.png" alt="Comparing Python versions."></p>
+<p>Now, you can launch whichever version of Python you like within Anaconda Navigator by clicking on an environment name, then the green triangle next to that name (see above photo). You can choose to open the environment with base Python or with <a href="https://ipython.org/" target="null">iPython</a>, an interactive Python shell with improved functionality.</p>
+
+<p>You could also choose to switch between environments using the <code>source activate</code> and <code>source deactivate</code> commands on the command line. You can view all available environments using the <code>conda info --envs</code> first, then copy the path to the one that you want to activate. Once you are done working that environment you can pass the deactivate command to return to your root environment.</p>
+<p style="text-align:center;"><img src="commandline.png" alt="Activating an environment from the command line."></p>
+<p> Once you have the environment activated with your preferred version of Python, launching Python from the command line is as easy as typing <code>python</code>. You will see the <code>&gt;&gt;&gt;</code> appear, indicating that you are in Python; when you are done, type <code>quit()</code> to return to bash. But can you honestly imagine writing and running entire analysis pipelines in this manner? Of course not. That&rsquo;s why we can again turn to IDEs and text editors to make our lives easier.</p></p>
+
+<p><h4> Step Two: Selecting a text editor or IDE</h4>
+<p>IDEs are nicer to work with than text editors when coding in Python because they allow you to test chunks of code without running a whole script. Text editors like Atom and Sublime do have debugging functionality built-in, in that they will indicate when your code looks broken, but to figure out if you&rsquo;ve actually written things the correct way you still need to run the whole shebang and see if it breaks (and if an error is printed, and if you even recognize the error). I&rsquo;m still at the level of baby&rsquo;s first Python script, so using an IDE is preferable as it lets me check things while I go (P.S. -this is a controversial opinion! There are those who argue in favor of learning to walk (command line + text editor) before you run (IDE). Choose whichever approach is best for your learning goals.).</p>
+
+<p>Enter Anaconda, making life less complicated again. Anaconda comes bundled with a handful of IDE options. You can view them on the home tab:</p>
+</p>
+<p style="text-align:center;"><img src="anacondaides.png" alt="Available IDEs in Anaconda"></p>
+<p>If you like R Studio&rsquo;s format you will probably like Spyder, which is visiually similar as it has windows for the console, script editor, and environment variables/help. This is what I started using when I was making the first tentative steps over from R to Python. My fellow Neurohackers recently introduced me to VScode, which I will be using going forward. Why? VScode is a one-stop-shop IDE that allows you to code in <b>every language</b> covered in this blog post, along with many others, as well. In the following VScode window I have open a bash shell, a R script, and a Python script that I am working on all at once, in the same program.</p>
+<p style="text-align:center;"><img src="alltogethernow.png" alt="VScode windows."></p>
+<p>Keep in mind that the goal is to make coding easier for you, so you should feel free to pick an IDE that is the best fit. In the lab that I am in we have scripts written in all three languages so being able to swap seamlessly among them is ideal. If you are learning Python after having worked with R, you might prefer Spyder. And I&rsquo;ve heard good things about another popular IDE (that does not come with Anaconda) called <a href="https://www.jetbrains.com/pycharm/" target="null">Pycharm</a>. There&rsquo;s enough options out there for you to be a veritable Python Goldilocks!
+</p>
+<h4> Step Three: Installing and managing packages and modules</h4>
+<p>Python packages are collections of functions, variables, and other assorted code that can be imported into your working enviornment to add different functionality. Modules are chunks of specific functions within a package. For example, if I wrote a package called &lsquo;catplot&rsquo; each of the steps of interpreting imported data, plotting it, and then turning the individual data points into pictures of my cat&rsquo;s face would be the modules in the package.</p>
+
+<p>A neat thing about Python is that you can choose to import whole packages or individual modules into your working environment. Let&rsquo;s practice this using Anaconda Navigator. Anaconda installs for you a variety of popular Python packages, which you can view underneath the &lsquo;Environments&rsquo; tab. In your environment you should be able to find <b>numpy</b> and <b>pandas</b> in the list of installed packages. Now, open a new Python window and type in <code>help(numpy)</code> to view the documentation of this package.</p>
+
+<p>&hellip;It didn&rsquo;t work, did it? Because we didn&rsquo;t import it yet. Like R, using packages and modules is a two-step process. Since Anaconda already installed these packages for us, we just need to import them (and like R, we need to import the packages we want to use every time we boot up a new Python window or script). <code>import numpy</code>. Now <code>help(numpy)</code> works and displays all of the package information (press <code>q</code> to quit out of the help documentation). Let&rsquo;s try importing a module from a package next. To do this, tell Python first <b>from</b> which package the module should be loaded, then the name of the package itself. <code>from pandas import melt</code>. Now try <code>help(melt)</code> and <code>help(pandas)</code>. The former works while the latter does not, because we only imported the module melt from pandas and not the whole package.</p>
+<hr>
+<h5>A brief aside</h5>
+<p>What if you want to work with packages that didn&rsquo;t come installed with Anaconda? Open up a Python window and pass <code>conda install $packagename</code>. Note that this will install the package to your current Python environment; to install it to another, use the -n (environment name) flag: <code>conda install -n $environment_name $packagename</code>. <a href="https://conda.io/docs/commands/conda-install.html" target="null">A list of arguments for the conda install function are available here.</a> If you are not using Anaconda, use the <code>pip install $packagename</code> command. </p>
+<hr>
+<p>
+Another neat thing about Python is that you can set a nickname for the package that you are importing in order to make it easier to call functions from that package. This is why, if you&rsquo;ve seen Python scripts before, you&rsquo;ve probably seen <code>import numpy as np</code> at the top of the script. When you call modules from packages in Python, you type <code>$package_name.$module_name</code>. For example, the module <b>melt</b> from pandas that we just practiced importing is a function that reshapes data by gathering columns into rows (changing data from wide form to long form, essentially). An example of using that command in Python would look like <code>longdata = pandas.melt(widedata)</code>. When writing a script, typing that many characters over and over can become tedious and is more prone to encouraging typos, so instead we can tell Python to <code>import pandas as pd</code> and make our commands somewhat shorter but more easier to type, <code>longdata=pd.melt(widedata)</code>.</p>
+
+<p>Finally, like languages and software, packages too have versions that may cause unexpected errors or conflicts. Thankfully, you can also manage which versions of packages you have installed in Anaconda Navigator. Across from the package name you can see which version is active, and whether there is an update available for that package (indicated by blue font and a blue arrow).</p>
+<p style="text-align:center;"><img src="packageversions.png" alt="Anaconda package versions."></p>
+<p>
+Clicking on the arrow gives you the option to update the packages individually in Anaconda. If you would like to go the <i>other</i> way, and roll back to a previous package version, click on the green checkmark next to a package name and select &lsquo;mark for a specific version installation&rsquo; from the dropdown menu; a list of package versions will then be displayed for you to choose among. And, if you want to update all of your outdated packages in one fell swoop, pass <code>conda update --all</code> from the command line. Easy peasy.</p>
+</p>
+<h4> Next Steps: Learn to code in Python</h4>
+<p>If you have installed Anaconda, you now have installed Python, a suite of poplar Python packages, and a couple of IDE options to work within. Now the fun part begins- learning to code and writing scripts! Luckily there are many, many fantastic resources for helping you learn this widely-used language. <a href="https://www.codecademy.com/learn/learn-python" target="null">Code Academy</a> has a nice course that can help get you comfortable running basic commands in a Python environment. Tal Yarkoni, one of the Neurohackademy organizers and instructors, has made his <a href="https://neurohackademy.org/course/introduction-to-python/" target="null">Neurohack intro to Python session</a> available to all. Jake VanderPlas, another Neurohackademy course instructor, has written an <a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="null"> online <i>Python Data Science Handbook</i></a>. And while the former options are all free and open, I would be remiss not to mention the evergreen favorite textbook, <a href="https://learnpythonthehardway.org/" target="null"> <i>Learn Python the Hard Way</i></a>, which does cost some buckaroos (or at least involves some people skills or ingenuity). And never forget that when it comes to coding, especially in Python- the internet has your back.</p>
+<blockquote style="text-align:center;background-color:#3413d8;color:white;font-family:serif;font-size:175%;">TL;DR</blockquote>
+<p>Python is the language of data science, connecting scientists across a diverse range of fields and specialties. There is a bit of an uphill climb to writing in this language. Anaconda helps keep everything you need for working in Python under one GUI roof, so that getting started with coding is as simple as installing one program. Once you are ready to begin coding in Python you can check out the <a href="https://neurohackademy.org/course/introduction-to-python/" target="null">Neurohackademy</a> intro to Python crash course or the <a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="null"> online <i>Python Data Science Handbook</i></a> written by Neurohackademy instructor Jake VanderPlas.</p>
+<h3>Next Time</h3>
+<p>I hope that documenting these first steps, along with some tips, tricks, and external resources, is useful for you. Not everyone comes from computer science-heavy labs (especially in psychology) and I often found myself falling 8 steps behind when trying to learn how to code because I never thoroughly understood Step One. If you still have questions feel free to email me and I will do my best to answer them.</p>
+
+<p>Next time I&rsquo;ll be posting similar first steps tutorials for the tools that we used at Neurohackademy- Docker, Jupyter Notebooks, and Git Hub. </p></p>
+
+					</div>
+				</article>
+
+			</div>
+		</div> 
+
+        <div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<div id="share">
+                    
+				</div>
+			</div>
+		</div> 
+		<div class="clearfix"></div>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<div id="comments">
+                    
+				</div>
+			</div>
+		</div> 
+		<div class="clearfix"></div>
+
+	</div>	
+
+</main>
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contact</h3>
+				<div class="widget-body">
+					<p>rludwig[at]uoregon[dot]edu<br>
+					</p>
+				</div>
+			</div>
+			
+
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Follow me</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="https://github.com/rxqx" target="_blank"><i class="fa fa-github fa-2"></i></a>
+                            
+                        
+                            
+                        
+					</p>
+				</div>
+			</div>
+			
+
+			
+
+			
+
+		</div> 
+	</div>
+</footer>
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p></p>
+				</div>
+			</div>
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p class="text-right">
+						Copyright &copy; 2018, Rita M. Ludwig, M.A., M.S.<br>
+						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> - 
+                        Powered by: <a href="https://gohugo.io/" rel="poweredby">Hugo</a>
+                    </p>
+				</div>
+			</div>
+
+		</div> 
+	</div>
+</footer>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://rxqx.github.iojs/template.js"></script>
+<script id="dsq-count-scr" src="///count.js" async></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
