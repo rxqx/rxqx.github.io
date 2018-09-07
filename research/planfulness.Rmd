@@ -1,14 +1,12 @@
 ---
-title: Planfulness
-author: ''
+title: The Planfulness Scale
+author: Rita Ludwig
 date: '2018-07-07'
 slug: planfulness
 categories: []
 tags: []
 image_preview: 'tattoocrop.jpeg'
 ---
-<h2 class="section-title"><span>The Planfulness Scale</span></h2>
-
 The Planfulness Scale <a href="http://doi.org/10.1525/collabra.136" target="_blank"> (Ludwig, Srivastava, & Berkman, 2018)</a> is a 30-item measure that assesses the tendency for people to exhibit patterns of thoughts about goals that have been shown to encourage goal achievement in laboratory research. It weaves together previous work from achievement and personality psychology to provide an easily distributed metric of whether people tend to use evidence-backed goal-encouraging habits.
 
 The original aim of developing this scale was to inform intervention research. We began with the broad question of, "how can we help people achieve their goals?", with an eye turned specifically turned toward challenging, consequential life goals such as quitting an addiction. We knew that we weren't the first ones to ask this question, and so we turned to the vast literature on achievement to figure out where to start. 
