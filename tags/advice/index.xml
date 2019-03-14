@@ -6,18 +6,19 @@
     <description>Recent content in Advice on RM Ludwig</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://rxqx.github.io/tags/advice/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Working in a SCRUM lab</title>
-      <link>https://rxqx.github.io/post/working-in-a-scrum-lab/</link>
-      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      <title>Why grad students benefit from open science practices</title>
+      <link>https://rxqx.github.io/post/why-grad-students-benefit-from-open-science-practices/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://rxqx.github.io/post/working-in-a-scrum-lab/</guid>
-      <description>The mutual influence of the fields of computer science and psychology is undeniable. Psychologists have adapted computer science theories to describe psychological phenomena, computer scientists have returned the compliment, and both fields are combining their strengths to work towards advancing understanding of important topics such as human brain function and treatment of psychological disorders. Each field is enriched by the other, a scientific symbiosis pushing the boundaries of human knowledge.</description>
+      <guid>https://rxqx.github.io/post/why-grad-students-benefit-from-open-science-practices/</guid>
+      <description>Open science badges created and maintained by the Open Science Collaboration
+The Context We are in the midst of a paradigm shift in psychology. It has been less than ten years since the Simmons, Nelson, and Simonsohn &amp;ldquo;False-Positive Psychology&amp;rdquo; paper demonstrated &amp;ldquo;how unacceptably easy it is to accumulate (and report) statistically significant evidence for a false hypothesis,&amp;rdquo; calling into question the legitimacy of standard research proceedures used in many psychology labs.</description>
     </item>
     
   </channel>
